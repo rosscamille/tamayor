@@ -89,14 +89,73 @@ RiverData <- c(length(rivers), sum(rivers), mean(rivers), median(rivers), var(ri
 #b
 RiverData
 
+#8. Forbes Magazine
+#a.
+RanksData <- data.frame(
+  
+  PowerRanking = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25),
+  CelebrityName = c("Tom Cruise","Rolling Stones","Oprah Winfrey","U2","Tiger Woods","Steven Spielberg","Howard Stern","50 Cent","Cast of the Sopranos","Dan Brown","Bruce Springsteen","Donald Trump","Muhammad Ali","Paul McCartney","George Lucas","Elton John,","David Letterman","Phil Mickelson","J.K Rowling","Bradd Pitt","Peter Jackson","Dr. Phil McGraw","Jay Lenon","Celine Dion","Kobe Bryant"),
+  Pay = c(67,90,225,110,90,332,302,41,52,88,55,44,55,40,233,34,40,47,75,25,39,45,32,40,31)
+  
+)
+RanksData
+View(RanksData)
+
+#b. 
+
+RanksData$PowerRanking[RanksData$PowerRanking =="J.K Rowling"] <-15
+RanksData$Pay[RanksData$Pay =="J.K Rowling"] <-90
+RanksData
+
+#c
+
+PowerRanking = read.csv('/cloud/project/PowerRanking.csv')
+PowerRanking
+AccessPowerRanking = PowerRanking[c(10:20),]
+AccessPowerRanking
+
+#e. Output is the 10-20 row information in the csv file.
 
 
+#9.
+#install.package("readxl")
+library(readxl)
+Data <- read_excel("hotels-vienna.xlsx")
+Data
+View(Data)
+#b
+DimensionFile <- dim(Data)
+DimensionFile
+#c
+colnames(Data)
+Colums <- Data[c("country", "neighbourhood", "price", "stars", "accommodation_type", "rating")]
+View(Colums)
+#d
+save(Colums, file="new.RData")
+View(Colums)
+
+#e
+load("new.RData")
+Colums
+
+Head_Six <- head(Colums)
+Tail_Six <- tail(Colums)
+View(Head_Six)
+View(Tail_Six)
 
 
-
-
-
-
+#10.
+#a.              
+Vegetables <- list("Lettuce","Potato","Celery","Tomato","Bitter Gourd","Squash","Cabbage","Eggplant","Broccoli","Carrots")
+#b
+NewList <- append(Vegetables,c("Cucumber","Mushroom"))
+NewList
+#c
+NewList <- append(Vegetables,c("Cauliflower","Green Bean","Radish","Spinash"),after = 5)
+NewList
+#d
+NewList <- Vegetables [c(-5, -10, -15)]
+NewList
 
 
 
