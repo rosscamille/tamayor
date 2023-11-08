@@ -1,0 +1,18 @@
+#1 for () loop
+
+vectorA = [1,2,3,4,5]
+
+vectorA <-  matrix(0, nrow=5, ncol=5)
+
+for (i in 1:5) {
+  for(j in 1:5){
+  
+      abs <-(vectorA[i]-vectorA[j])
+      
+        vector[i,j] <-abs
+}
+}
+
+
+
+
