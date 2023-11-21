@@ -225,3 +225,6 @@ rownames(array) <- c ("a","b")
 
 array
 
+
+
+
