@@ -4,30 +4,6 @@ output: pdf_document
 date: "2023-10-04"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
 
 
 
@@ -90,10 +66,84 @@ temp
 #output
 [1] 42 39 34 34 30 27
 
-#c. Create a
-dataframe to combine the city and the temp by using ‘data.frame(). What
-the R code and its result?
+#c. dataframe to combine the city and the temp 
 
+city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City")
+
+temps <- c(42, 39, 34, 34, 30, 27)
+
+citytemp <- data.frame (
+  
+            city = c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City"),
+            temp = c(42, 39, 34, 34, 30, 27)
+)
+
+citytemp
+View(citytemp)
+
+#d. Associate the dataframe you have created in 2.(c)
+
+
+names(citytemp) <- c ("City", "Temperature")
+citytemp
+
+#e. print the structure
+
+print(str(citytemp))
+#The output diplayed that there are 6 observations of 2 variables.
+
+#f. what is the content of row 3 and row 4
+
+row3_4 <- citytemp [3:4,]
+row3_4
+
+
+#g.  highest and lowest temperature
+
+highest_temp <-citytemp [which.max(citytemp$Temperature),]
+highest_temp
+
+
+lowest_temp <-citytemp [which.min(citytemp$Temperature),]
+lowest_temp
+
+
+#using matrices
+
+# row = 2
+matrix(c(5,6,7,4,3,2,1,2,3,7,8,9),nrow = 2)
+
+# row = 3 and column = 2
+matrix(data = c(3,4,5,6,7,8),3,2)
+
+# creating a diagonal matrix where x value will always be 1
+diag(1,nrow = 6,ncol = 5)
+
+diag(6)
+
+
+
+#2. Create a matrix of one to eight and eleven to fourteen with four columns and three rows.
+
+#a. What will be the R code for the #2 question and its result?
+
+#row=3
+matrix (c(1:8, 11:14),nrow=3)
+
+#b. Multiply the matrix by two. What is its R code and its result?
+
+matrix=matrix*2
+matrix
+
+#c. What is the content of row 2? What is its R code?
+
+mat <- matrix (c(1:8, 11:14),nrow=3)
+mat
+
+
+mat[2]
+
+#d. What will be the R code if you want to display the column 3 and column 4 in row 1 and row 2? What is its output?
 
 
 
