@@ -132,21 +132,96 @@ matrix (c(1:8, 11:14),nrow=3)
 
 #b. Multiply the matrix by two. What is its R code and its result?
 
+
 matrix=matrix*2
 matrix
 
 #c. What is the content of row 2? What is its R code?
 
-mat <- matrix (c(1:8, 11:14),nrow=3)
-mat
+x2 <- matrix (c(1:8, 11:14),nrow=3)
+x2
 
 
-mat[2]
+rowx2 <- x2[,2]
+rowx2
 
 #d. What will be the R code if you want to display the column 3 and column 4 in row 1 and row 2? What is its output?
 
+x2 <- x2[1:2,3:4]
+x2
+
+#e. What is the R code is you want to display only the columns in 2 and 3, row 3? What is its output?
+
+subsetx2 <- x2[3,2:3]
+subsetx2
+
+
+#f. What is the R code is you want to display only the columns 4? What is its output?
+
+colx2 <- x2[,4]
+colx2
+
+
+#g. Name the rows as isa, dalawa, tatlo and columns as uno, dos, tres, quatro for the matrix that was created in b.‘. What is its R code and corresponding output?
+
+
+mat <-matrix (c(1:8, 11:14),nrow=3)
+
+rownames(mat) <- c ("isa","dalawa","tatlo")
+colnames(mat) <- c ("uno","dos","tres","quatro")
+print(mat)
+
+#h. From the original matrix you have created in a, reshape the matrix by assigning a new dimension with dim(). New dimensions should have 2 columns and 6 rows. What will be the R code and its output?
+
+
+mat <- matrix (mat,nrow=6, ncol=2)
+mat
+
+
+#Using Arrays
+
+# creates a two-dimensional array containing numbers from 1 to 24 that have 3 rows and 4 columns
+
+array_dta <- array(c(1:24), c(3,4,2))
+array_dta
+
+
+# checking for the dimensions
+# row, column, dimension
+
+dim(array_dta)
+
+#checking for the number of elements
+
+length(array_dta)
+
+• Another way to create arrays
+vectorA <- c(1:24)
+
+# creating an array
+
+an_Array <- array(vectorA, dim = c(3,4,2))
+an_Array
 
 
 
+#a. Create an array for the above numeric values. Each values will be repeated twice What will be the R code if you are to create a three-dimensional array with 4 columns and 2 rows. What will be its output?
 
+#3. An array contains 1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1
+
+vectorA <- c(1,2,3,6,7,8,9,0,3,4,5,1)
+
+array <- array(vectorA, dim=c(2,4,3))
+array
+
+#b. How may dimensions do your array have?
+
+dim(array)
+
+#c. c. Name the rows as lowercase letters and columns as uppercase letters starting from the A. The array names should be “1st-Dimensional Array”, “2nd-Dimensional Array”, and “3rd-Dimensional Array”. What will be the R codes and its output?
+
+colnames(array) <- c ("A","B","C","D")
+rownames(array) <- c ("a","b")
+
+array
 
