@@ -218,7 +218,7 @@ array
 
 dim(array)
 
-#c. c. Name the rows as lowercase letters and columns as uppercase letters starting from the A. The array names should be “1st-Dimensional Array”, “2nd-Dimensional Array”, and “3rd-Dimensional Array”. What will be the R codes and its output?
+#c. c. Name the rows as lowercase letters and columns as uppercase letters starting from the A. The array names should be “1st-Dimensional Array”, “2nd-Dimensional Array”, and “3rd-Dimensional Array”.
 
 colnames(array) <- c ("A","B","C","D")
 rownames(array) <- c ("a","b")
